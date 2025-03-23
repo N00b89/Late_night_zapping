@@ -10,24 +10,15 @@ func _ready():
 	var node1_scene = load("res://Scenes/Areas/Area_1/Area_1.tscn")
 	var node1 = node1_scene.instantiate()
 	var node2 = node1.get_child(0)
-	var character_body = node2.get_child(0)
 	
 	# Load and instance the new Node2D2
 	var node2_scene = load("res://Scenes/Areas/Area_1/" + channels[current_channel] + "1.tscn")
 	var new_node2 = node2_scene.instantiate()
 	
-	# Remove old Node2D2
-	node2.queue_free()
-	
-	# Add the new Node2D2 and reparent CharacterBody2D
+	# Add the new Node2D2
 	node1.add_child(new_node2)
-	new_node2.add_child(character_body)
 	
 	
-	# Ensure correct positioning (optional)
-	character_body.position = Vector2.ZERO
-	#character_body.ordering.z_index = 1
-	character_body.visibility.tob_level = true
 
 func _unhandled_input(event):
 	
