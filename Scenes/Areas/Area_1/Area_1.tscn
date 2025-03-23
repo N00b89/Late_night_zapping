@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://k84mba3diqex"]
+
+[ext_resource type="Script" path="res://Scripts/Switch.gd" id="1_me1df"]
+[ext_resource type="PackedScene" uid="uid://c5c4nb2r68ijx" path="res://Scenes/Areas/Area_1/Static_1.tscn" id="2_kt5kv"]
+[ext_resource type="PackedScene" uid="uid://dexpbobgx6kix" path="res://Scenes/guy.tscn" id="3_vc88w"]
+
+[node name="Area_1" type="Node2D"]
+script = ExtResource("1_me1df")
+
+[node name="Static_1" parent="." instance=ExtResource("2_kt5kv")]
+position = Vector2(15, 2)
+script = null
+
+[node name="Guy" parent="Static_1" instance=ExtResource("3_vc88w")]
+z_index = 2
+position = Vector2(7, -22)
