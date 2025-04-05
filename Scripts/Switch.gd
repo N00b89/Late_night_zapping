@@ -5,20 +5,32 @@ var channels = ["Static_", "Alien_", "Brick_", "West_"]
 var current_area = 1
 var area_path = "res://Scenes/Areas/"
 var saved_position = Vector2()
+var paused = false
 
 func _ready():
-	var node1_scene = load("res://Scenes/Areas/Area_1/Area_1.tscn")
-	var node1 = node1_scene.instantiate()
-	var node2 = node1.get_child(0)
+	# Load and instance the new Area
+	var Area = load("res://Scenes/Areas/Area_1/Area_1.tscn").instantiate()
 	
-	# Load and instance the new Node2D2
-	var node2_scene = load("res://Scenes/Areas/Area_1/" + channels[current_channel] + "1.tscn")
-	var new_node2 = node2_scene.instantiate()
+	# Load and instance the channel nodes and the menu
+	var node = load("res://Scenes/Areas/Area_1/" + channels[current_channel] + "1.tscn")
+	var new_node2 = node.instantiate()
 	
 	# Add the new Node2D2
-	node1.add_child(new_node2)
-	
-	
+	Area.add_child(new_node2)
+
+func _process(delta):
+	if Input.is_action_just_pressed("menu"):
+		pauseMenu()
+		
+func pauseMenu():
+	if paused:
+		PauseMenu.hide()
+		Engine.time_scale = 1
+	else:
+		PauseMenu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused
 
 func _unhandled_input(event):
 	

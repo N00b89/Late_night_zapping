@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dexpbobgx6kix"]
 
-[ext_resource type="Script" path="res://Scripts/guyAnimator.gd" id="1_2h3t5"]
-[ext_resource type="Script" path="res://Scripts/guyMovement.gd" id="1_bfc2p"]
+[ext_resource type="Script" uid="uid://dcfwqmqiov06c" path="res://Scripts/guyAnimator.gd" id="1_2h3t5"]
+[ext_resource type="Script" uid="uid://46vgrjlpwvl3" path="res://Scripts/guyMovement.gd" id="1_bfc2p"]
 [ext_resource type="Texture2D" uid="uid://d0sqpmccsdqkx" path="res://Sprites/Guy_animation.png" id="2_ykdhn"]
 
 [sub_resource type="Animation" id="Animation_cfg0f"]
@@ -86,11 +86,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh54w"]
 _data = {
-"Fall": SubResource("Animation_cfg0f"),
-"Idle": SubResource("Animation_n3dhw"),
-"Jump": SubResource("Animation_6hvhm"),
-"RESET": SubResource("Animation_0nmvh"),
-"Walk": SubResource("Animation_5pyoq")
+&"Fall": SubResource("Animation_cfg0f"),
+&"Idle": SubResource("Animation_n3dhw"),
+&"Jump": SubResource("Animation_6hvhm"),
+&"RESET": SubResource("Animation_0nmvh"),
+&"Walk": SubResource("Animation_5pyoq")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t8j7y"]
@@ -98,6 +98,7 @@ radius = 14.0
 
 [node name="Guy" type="CharacterBody2D"]
 script = ExtResource("1_bfc2p")
+jump_power = 14.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
@@ -109,6 +110,7 @@ animation_player = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator"]
+z_index = 1
 texture = ExtResource("2_ykdhn")
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
@@ -116,7 +118,7 @@ region_rect = Rect2(32, 0, 32, 32)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_fh54w")
+&"": SubResource("AnimationLibrary_fh54w")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

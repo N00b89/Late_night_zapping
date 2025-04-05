@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name GuyController
 
 @export var speed = 10.0
-@export var jump_power = 12.0
+@export var jump_power = 15.0
 
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
@@ -14,12 +14,17 @@ func _input(event):
 	# Handle jump.
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_power * jump_multiplier
-
+		
+	#if event.is_action_pressed("menu"):
+		#get_tree().quit()
 
 func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = jump_power * jump_multiplier / 3
 
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:

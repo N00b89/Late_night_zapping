@@ -7,6 +7,7 @@ var saved_position = Vector2()
 
 func _ready():
 	add_child(load("res://Scenes/guy.tscn").instantiate())
+	add_child(load("res://Scenes/pause_menu.tscn").instantiate())
 
 func next_level():
 	current_area += 1
