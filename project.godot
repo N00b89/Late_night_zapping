@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 GameManager="*res://Scripts/gameManager.gd"
 GuyMovement="*res://Scripts/guyMovement.gd"
 Switch="*res://Scripts/Switch.gd"
-PauseMenu="*res://Scenes/pause_menu.tscn"
 
 [display]
 

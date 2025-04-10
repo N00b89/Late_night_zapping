@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dexpbobgx6kix"]
+[gd_scene load_steps=12 format=3 uid="uid://dexpbobgx6kix"]
 
 [ext_resource type="Script" uid="uid://dcfwqmqiov06c" path="res://Scripts/guyAnimator.gd" id="1_2h3t5"]
 [ext_resource type="Script" uid="uid://46vgrjlpwvl3" path="res://Scripts/guyMovement.gd" id="1_bfc2p"]
+[ext_resource type="PackedScene" uid="uid://dmyxb4nwhsjgu" path="res://Scenes/pause_menu.tscn" id="2_y2mbu"]
 [ext_resource type="Texture2D" uid="uid://d0sqpmccsdqkx" path="res://Sprites/Guy_animation.png" id="2_ykdhn"]
 
 [sub_resource type="Animation" id="Animation_cfg0f"]
@@ -102,6 +103,8 @@ jump_power = 14.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("2_y2mbu")]
 
 [node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("guy_movement", "animation_player", "sprite")]
 script = ExtResource("1_2h3t5")

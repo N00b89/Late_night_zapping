@@ -6,23 +6,25 @@ script/source = "extends Control
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
+visible = false
+z_index = 1
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_left = -0.26
+anchor_right = 0.271
 anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -450.0
-offset_right = -300.0
-offset_bottom = -450.0
+offset_left = -34.4801
+offset_top = -602.0
+offset_right = -36.1921
+offset_bottom = -573.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.990164, 1)
+scale = Vector2(0.538409, 0.620824)
 script = SubResource("GDScript_y2c35")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 70.0
+offset_bottom = 136.0
 scale = Vector2(8.6351, 7.04)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]

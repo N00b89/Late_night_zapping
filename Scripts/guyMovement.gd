@@ -7,16 +7,30 @@ class_name GuyController
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
-
+var paused = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var menu
+
+func _ready():
+	var menu = $Camera2D/PauseMenu
 
 func _input(event):
 	# Handle jump.
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_power * jump_multiplier
 		
-	#if event.is_action_pressed("menu"):
-		#get_tree().quit()
+	if Input.is_action_just_pressed("menu"):
+		pauseMenu()
+		
+func pauseMenu():
+	if paused:
+		menu.hide()
+		Engine.time_scale = 1
+	else:
+		menu.show()
+		Engine.time_scale = 0
+		
+	paused = !paused
 
 func _physics_process(delta):
 	
