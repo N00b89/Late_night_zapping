@@ -11,11 +11,11 @@ func _process(_delta):
 		sprite.flip_h = true
 		
 	if abs(guy_movement.velocity.x) > 0.0:
-		animation_player.play("Walk")
+		animation_player.play(&"Walk")
 	else:
-		animation_player.play("Idle")
+		animation_player.play(&"Idle")
 		
 	if guy_movement.velocity.y < 0.0:
-		animation_player.play("Jump")
+		animation_player.play(&"Jump")
 	elif guy_movement.velocity.y > 0.0:
-		animation_player.play("Fall")
+		animation_player.play(&"Fall")
