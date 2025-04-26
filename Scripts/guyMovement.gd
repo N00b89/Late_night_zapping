@@ -13,6 +13,9 @@ func _ready():
 	#menu = $PauseMenu
 	pass
 
+func setting_position():
+	GuyMovement.position = Vector2(0, 0)
+
 func _input(event):
 	# Handle jump.
 	if event.is_action_pressed("jump") and is_on_floor() and PauseMenu.paused == false:

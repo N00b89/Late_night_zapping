@@ -29,7 +29,7 @@ func _on_resume_pressed() -> void:
 	pauseMenu()
 
 func _on_restart_pressed() -> void:
-	GuyController.position = Vector2(0,0)
+	GuyMovement.setting_position()
 
 func _on_settings_pressed() -> void:
 	pass

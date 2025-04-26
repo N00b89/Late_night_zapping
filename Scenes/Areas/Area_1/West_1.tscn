@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqwu8idjobevo"]
+[gd_scene load_steps=7 format=3 uid="uid://cqwu8idjobevo"]
 
 [ext_resource type="Texture2D" uid="uid://bktj3kcn7g14y" path="res://Sprites/WestBackground.png" id="1_da7c3"]
 [ext_resource type="Texture2D" uid="uid://ck3v8ts4s7bha" path="res://Sprites/WestBlock.png" id="2_tw5xh"]
-[ext_resource type="PackedScene" uid="uid://s0rf27mqkunm" path="res://Scenes/portal.tscn" id="3_ghybq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_arhbk"]
 texture = ExtResource("1_da7c3")
@@ -38,6 +37,3 @@ layer_0/tile_data = PackedInt32Array(-196609, 0, 0, -262146, 0, 0, -327682, 0, 0
 tile_set = SubResource("TileSet_o178i")
 format = 2
 layer_0/tile_data = PackedInt32Array(-1, 0, 0, -2, 0, 0, -3, 0, 0, -4, 0, 0, -5, 0, 0, -6, 0, 0, -7, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, -65531, 0, 0, -65530, 0, 0, 6, 0, 0, -8, 0, 0, -9, 0, 0, 65527, 0, 0, 65526, 0, 0, -10, 0, 0, 65528, 0, 0, -65529, 0, 0, 7, 0, 0, -65528, 0, 0, 8, 0, 0, 9, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, -11, 0, 0, -12, 0, 0, -13, 0, 0, -14, 0, 0, -15, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, -131072, 0, 0, -65537, 0, 0)
-
-[node name="Area2D" parent="." instance=ExtResource("3_ghybq")]
-position = Vector2(-19, -173)
