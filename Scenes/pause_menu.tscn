@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmyxb4nwhsjgu"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_kq0ga"]
+[ext_resource type="Script" uid="uid://n7238lj3tayi" path="res://Scripts/pause_menu.gd" id="1_kq0ga"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 scale = Vector2(0.3, 0.3)
@@ -48,3 +48,8 @@ offset_bottom = -573.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.538409, 0.620824)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

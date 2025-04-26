@@ -4,20 +4,21 @@ var current_channel = 0
 var channels = ["Static_", "Alien_", "Brick_", "West_"]
 var current_area = 1
 var area_path = "res://Scenes/Areas/"
-var saved_position = Vector2()
-var paused = false
+var Area: Node = null
 
 func _ready():
+	load_area()
+
+func load_area():
+
 	# Load and instance the new Area
-	var Area = load("res://Scenes/Areas/Area_1/Area_1.tscn").instantiate()
-	
+	Area = load("res://Scenes/Areas/Area_1/Area_1.tscn").instantiate()
+
 	# Load and instance the channel nodes
 	var channel_node = load("res://Scenes/Areas/Area_1/" + channels[current_channel] + "1.tscn").instantiate()
 
 	# Add the new channel_node
 	Area.add_child(channel_node)
-
-
 
 func _unhandled_input(event):
 	
@@ -38,7 +39,6 @@ func channel_switch_left():
 	if current_channel < 0:
 		current_channel = 3
 
-	print(position)
 	var full_path = area_path + "Area_" + str(current_area) + "/" + str(channels[current_channel]) + str(current_area) + ".tscn"
 	get_tree().change_scene_to_file(full_path)
 
@@ -48,6 +48,5 @@ func channel_switch_right():
 	if current_channel > 3:
 		current_channel = 0
 
-	print(position)
 	var full_path = area_path + "Area_" + str(current_area) + "/" + str(channels[current_channel]) + str(current_area) + ".tscn"
 	get_tree().change_scene_to_file(full_path)

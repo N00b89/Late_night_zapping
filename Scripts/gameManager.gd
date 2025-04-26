@@ -3,7 +3,6 @@ extends Node
 # Handles changing of levels
 var current_area = 1
 var area_path = "res://Scenes/Areas/"
-var saved_position = Vector2()
 
 func _ready():
 	add_child(load("res://Scenes/guy.tscn").instantiate())

@@ -7,9 +7,7 @@ class_name GuyController
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
-var paused = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 
 func _ready():
 	#menu = $PauseMenu
@@ -17,27 +15,14 @@ func _ready():
 
 func _input(event):
 	# Handle jump.
-	if event.is_action_pressed("jump") and is_on_floor():
+	if event.is_action_pressed("jump") and is_on_floor() and PauseMenu.paused == false:
 		velocity.y = jump_power * jump_multiplier
-		
-	#if Input.is_action_just_pressed("menu"):
-		#pauseMenu()
-		#
-#func pauseMenu():
-	#if paused:
-		#menu.hide()
-		#Engine.time_scale = 1
-	#else:
-		#menu.show()
-		#Engine.time_scale = 0
-		#
-	#paused = !paused
 
 func _physics_process(delta):
-	
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = jump_power * jump_multiplier / 3
 

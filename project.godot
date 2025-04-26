@@ -12,12 +12,13 @@ config_version=5
 
 config/name="Late Night Zapping"
 run/main_scene="res://Scenes/Areas/Area_1/Static_1.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Scripts/gameManager.gd"
+PauseMenu="*res://Scripts/pause_menu.gd"
 GuyMovement="*res://Scripts/guyMovement.gd"
 Switch="*res://Scripts/Switch.gd"
 
