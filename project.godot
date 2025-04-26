@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/gameManager.gd"
-PauseMenu="*res://Scripts/pause_menu.gd"
 GuyMovement="*res://Scripts/guyMovement.gd"
 Switch="*res://Scripts/Switch.gd"
 

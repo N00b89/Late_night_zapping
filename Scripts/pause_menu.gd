@@ -1,28 +1,22 @@
 extends CanvasLayer
 class_name Menu
 
-
-var paused : bool = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.hide()
 	pass # Replace with function body.
 
-func _input(_event):
-	if Input.is_action_just_pressed("menu"):
+func _input(event: InputEvent):
+	if event.is_action_pressed(&"menu"):
 		pauseMenu()
-		
+
 func pauseMenu():
-	if paused:
+	if get_tree().paused:
 		self.hide()
-		Engine.time_scale = 1
+		get_tree().paused = false
 	else:
 		self.show()
-		Engine.time_scale = 0
-	
-	print(paused)
-	paused = !paused
+		get_tree().paused = true
 
 
 func _on_resume_pressed() -> void:

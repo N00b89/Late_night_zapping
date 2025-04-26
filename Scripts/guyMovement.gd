@@ -18,7 +18,7 @@ func setting_position():
 
 func _input(event):
 	# Handle jump.
-	if event.is_action_pressed("jump") and is_on_floor() and PauseMenu.paused == false:
+	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_power * jump_multiplier
 
 func _physics_process(delta):

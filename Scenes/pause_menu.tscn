@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://n7238lj3tayi" path="res://Scripts/pause_menu.gd" id="1_kq0ga"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 scale = Vector2(0.3, 0.3)
 transform = Transform2D(0.3, 0, 0, 0.3, 0, 0)
 script = ExtResource("1_kq0ga")
@@ -32,22 +33,6 @@ text = "Settings"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-
-[node name="PauseMenu" type="Control" parent="."]
-process_mode = 3
-visible = false
-z_index = 1
-layout_mode = 3
-anchor_left = -0.26
-anchor_right = 0.271
-anchor_bottom = 1.0
-offset_left = -34.4801
-offset_top = -602.0
-offset_right = -36.1921
-offset_bottom = -573.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.538409, 0.620824)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
